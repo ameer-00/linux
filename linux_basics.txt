@@ -1,0 +1,110 @@
+                                  ------------COMMAND LINE------------  
+
+echo : It simply displays or "echoes" the text you probide as argument back to the terminal . 
+filesystem : files these files are organized within a hierarchical structure known as filesystem .
+path : is a sequence of directories that leads from a starting point to a specific destination .
+
+difference between shell & terminal : 
+
+shell is The program that interprets and executes your commands (such as Bash, Zsh, PowerShell, CMD)
+Terminal Emulator : A graphical program that opens a window for you to communicate with the shell (such as GNOME Terminal, Konsole, iTerm2)
+
+
+
+
+
+date : displays the current time and date .
+uptime : display how long the system has been running and the average number of processes running over various periods of time .
+df : to see the current amount of free space on out disk drives . 
+df (human-readable) : it displays numbers in a way that is understandable to humans . 
+free : display the amount of free memory . 
+exit : closing the terminal .
+
+
+
+pwd (Print Working Directory) : Print name of current working directory .
+cd (Change directory) : to move around the linux filesystem .
+    cd . (current directory) : Represents the directory you are currently in .  
+    cd ..  (parent directory)  : Moves you one level up to the directory containing your current one.
+
+ls (List Directories)  : will list the directories and files in your current directory .
+    ls -a (all) : you can view all files and hidden files .
+    ls -l (long) : show detailed information starting from the left , file permissions, number of links, owner name, owner group, file size, timestamp of last modification, and the file or directory name.
+    ls -r (reverse) : lest files and directories in reverse alphabetical order . 
+    ls -al || ls -lar  :  al >> all and long    &&     lar >> all , long and reverse   .  
+
+touch : create empty file , original function of touch command is ( to update ) the access and modification timestamps of file or directory . 
+    touch -r (reference file) : allow to set a file's timestamp to match that of another file . 
+    touch -d (date and time) : can ste a files timestamp to a specific date and time ,   ( "2023-01-01 12:30:00" file name ) .
+    
+nano : to writing content within the file . 
+
+
+file : command use to find the file type of a file . 
+
+cat (concatenate) : display the contents of files . 
+    cat > : quick way to write text into file directly  Ctrl+D >>> save and exit     but if write new line the first line will deleat . 
+    cat >> : add to the file without deleting the previous content . 
+    cat -n : this option numbers all lines starting from 1 .
+    cat -b : this option numbers only the non-empty output lines. 
+
+less : it will open the file in the less interface > go to starte  (g) got to end (shift +g).
+    /search_term: Searches forward for "search_term".
+    ?search_term: Searches backward for "search_term".
+    n: Jumps to the next occurrence of the search term.
+    N: Jumps to the previous occurrence
+    q: to quit the less viewer and go back to your shell /.
+
+
+history : To see the list of commands you have used .
+    history -c : it clear the command history for your cutrent session .
+    
+cp : To copy a file you specify the source file and the destination directiory or path  cp [source] [destination]
+    [ source ] : The file or folder you want to copy .
+    [ destination ]: The place where you want to put the copy . 
+    cp -r(recursive) :To copy a directory and all of its content , including subdirectories . 
+    cp -i(interactive) :By default, cp will overwrite a file at the destination if it has the same name. To prevent accidental data loss, use the -i (interactive) flag, which prompts for confirmation before overwriting.
+    cp -p :  is particularly useful for backups or when migrating files where preserving timestamps is critical.
+
+mv (move) : it serves two primary purposes >> 
+    renaming files or directories :  for renaming 
+
+    moving them to a different location : to move items from one location to another . 
+        Note: ' mv ' does not leave a copy of the original file , unlike 'cp'  which copies and leaves the original.
+        -t : which allows to specify the target directory first . 
+        -i (interactive): it will prompt you for confirmation before overwriting any existing file.
+        -b (backup) : If you intend to overwrite a file but want to keep the old version, this option creates a backup of the destination file. The backup is typically renamed with a tilde (~) suffix.
+        -v (verbose):  This option makes the mv command print out what it is doing, showing each file being moved or renamed.
+
+Using Wildcards or globbing patterns for buld copying : 
+        *  :  Matches any sequence of characters.
+        ?  :  Matches any single character.
+        []  :  Matches any one of the characters enclosed in the brackets.
+
+mkdir (make Directory) : create a directory .
+    -p (parent) : use it for creare nested directories 
+
+rm (remove) : deleting files and directories . 
+    -f (force)  : To bypass these safety prompts and remove files unconditionally, you can use the force option.
+    -i (interactive) : flag prompts you for confirmation before deleting each file, helping to prevent accidental removal
+    -r (recursive) : delete a directory and all of its contents.
+    rmdir : command will only succeed if the directory is completely empty .
+
+
+find : to search a file in specific directory , [path] [expression] .
+    [path] : directory the search in . 
+    [expression] : what i looking for . 
+    -name : option allows you to specify the exact name of the file you want to find . 
+    -type : specify the type of item you are searching for . 
+    -type d : to find a directory instead of a file . 
+
+
+help : to provide ingormation about other bash built-in commands . 
+man (man pages) : provide a detailed description of what a command does , its available options or flags . 
+whatis : displays a concise , one-line description of a command directly .
+
+alias : to create a temporary alias that lasts for your current terminal session . 
+    unalias : remove an alias .
+
+                              ----------FILESYSTEM---------
+
