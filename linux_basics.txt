@@ -16,7 +16,8 @@ Terminal Emulator : A graphical program that opens a window for you to communica
 date : displays the current time and date .
 uptime : display how long the system has been running and the average number of processes running over various periods of time .
 df : to see the current amount of free space on out disk drives . 
-df (human-readable) : it displays numbers in a way that is understandable to humans . 
+    df -h (human-readable) : it displays numbers in a way that is understandable to humans . 
+    df -T : flag show the filesystem type .
 free : display the amount of free memory . 
 exit : closing the terminal .
 
@@ -106,5 +107,158 @@ whatis : displays a concise , one-line description of a command directly .
 alias : to create a temporary alias that lasts for your current terminal session . 
     unalias : remove an alias .
 
-                              ----------FILESYSTEM---------
+                         ----------Text-Fu---------
+Stdout (standard Out) 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                         ----------FILESYSTEM---------
+
+File system hierarchy : most linux distributions organize their filesystem according to the linux file system hierarchy(FHS).
+    The root directory : "/" the starting point for the entir filesystem , every single file and directiory in your system is located under this directory. 
+    Essential system directiories : 
+        /bin : contains essential command-line programs (binaries) available to all users .
+        /sbin : Holds essential system binaries, which are primarily intended for system administration and can typically only be run by the root user.
+        /etc : This is the core system configuration directory  .
+        /lib :  Contains essential shared library files that system binaries in /bin and /sbin depend on to function correctly.
+        /boot : Stores the files required for the system's boot process, including the Linux kernel and the boot loader files.
+    User and Application Data : 
+        /home : Contains personal directories for each user. This is where you store your documents, application settings, and other personal files.
+        /root :  The home directory for the root user . 
+        /opt : Reserved for optional or third-party application software packages.
+        /usr : This directory contains user-installed software and utilities .
+    Dynamic and Temporary Data : 
+        /var : Stands for "variable"  and stores files that are expected to change in size and content such as system logs .
+        /tmp :  A world-writable space for storing temporary files , Files in this directory are often deleted upon system reboot.
+        /run : Contains information about the running system since the last boot, such as process IDs (PIDs) and other runtime data.
+    Device and Mount points : 
+        /dev :  Contains special device files that represent hardware components like hard drives, terminals, and input devices.
+        /media : A standard mount point for removable media like USB drives, SD cards, and CD-ROMs.
+        /mnt :  A generic mount point for temporarily mounting filesystems.
+    System information : 
+        /proc : A virtual filesystem that provides real-time information about currently running processes and kernel parameters.
+        /srv :  Intended for site-specific data served by the system, such as files for a web server. 
+
+File system type : 
+    (VFS) : is an abstraction layer in the Linux kernel that sits between applications and the various filesystems
+    journaled filesystem : Before performing a write operation, it first records the intended changes in a special log file, or "journal." Once the operation is successfully completed, the journal is updated to mark the task as finished. If a crash occurs, the system can simply read the journal upon reboot to see which operations were in progress and quickly bring the filesystem back to a consistent state. This dramatically reduces recovery time and protects against data corruption.
+    Common Linux File System Types : 
+        ext4 : 
+        Btrfs : 
+        XFS : 
+        NTFS and FAT : 
+        HFS+ : 
+Anatomy of a Disk : A hard disk in Linux can be subdivided in to partitions .
+    Partitions table : specifies where each partition begins and ends, which partitions are bootable, and what sectors of the disk are allocated to each partition , and there are two primary partition table schemes >> 
+        MBR partition (Master Boot Record) : is the traditional partition table standard .
+            It supports primary, extended, and logical partitions.
+            It supports disks up to 2 terabytes in size .  
+        GPT partitions (GUID) : is the modern standard for disk partitioning . 
+            It has only one type of partition, and you can create a large number of them.
+
+    File system structure : a filesystem is an organized collection of files and directories. At its core, it consists of a database to manage files and the files themselves 
+        Boot block :  It contains information used to boot the operating system ,
+        Superblock : This is a single block following the boot block that contains metadata about the filesystem.
+        Inode table : This is the database that manages files and directories .
+        Data blocks : This is where the actual content of your files and directories is stored.
+Disk Partitioning : 
+    To partition our disk : There are many tools
+       fdisk :  A basic command-line partitioning tool; it does not support GPT .
+       parted : A powerful command-line tool that supports both MBR and GPT partitioning.
+       gparted :  The graphical version of parted .
+       gdisk : Similar to fdisk , but it only supports GPT.
+    sudo parted -l :  helps to find the correct device name .
+    sudo parted : where you can run commands to manage your device's partitions.
+    select (Selecting a Device) : you must select the disk you want to modify. Be very careful to choose the correct one to avoid data loss. 
+    Viewing the Partition Table : print : command to display the partition table of the selected disk.
+    Creating a Partition : 
+        mkpart :  command creates a new partition ,  You need to specify the partition type ,an optional filesystem type, and the start and end points.
+        resizepart : You'll need the partition number and the new end point. 
+
+ 
+ Creating Filesystems : 
+    mkfs (make filesystem) :  
+
+                                                .
+                                                .
+                                                .
+mount and umount :                                                 
+                                                .
+                                                .
+                                                .
+                                                .
+/etc/fstab  :                                               
+                                                .
+                                                .
+                                                .
+swap : 
+                                                .
+                                                .
+                                                .
+Disk Usage : 
+                                                .
+                                                .
+                                                .
+Filesystems Repair : 
+                                                .
+                                                .
+                                                .
+inodes : 
+                                                .
+                                                .
+                                                .
+symlinks : 
+                                                .
+                                                .
+                                                .
