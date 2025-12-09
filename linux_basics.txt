@@ -108,11 +108,35 @@ alias : to create a temporary alias that lasts for your current terminal session
     unalias : remove an alias .
 
                          ----------Text-Fu---------
-Stdout (standard Out) 
+Stdout (standard Out) : A path in the system through which the program's output passes . 
+    explain how stdout working first most command in linux produce output data so this output is sent via a channel called (stdout) & (stdout) is connected by default to the screen (terminal) .
+                echo"Hello world" >> stdout >> terminal 
+        ** the difference between ( output & stdout ) >> 
+            Output : The final output you see on the screen is what came out via stdout or may come from other channels.
+            stdout :  A path in the system through which the program's output passes
 
+            In linux there are 3 standard channels for working with programs  ???
+                0) stdin : input , Example > what you type on the keyboard .
+                1) stdout : normal output .
+                2) stderr : Error message output .
 
-
-
+    Redirecting stdout with : 
+        The > character is a redirecction operator , It intersepts the data heading to stdout and sends it to a nex destination (Write) . 
+Stdin (Standard In) : It is the program's default input channel .
+    under standing (stdin & stdout) ....
+        stdin : Aprogram reads data from stdin .
+            stdin here Not the keyboard itself , The keyboard is just a default source; however, this source can be changed to something else, such as a file.  
+                so keyboard is (source) , file here is source 
+                but data Which are read and implemented is (input) , data inside file .
+        stdout : and writes it's results to stdout . 
+    Redirecting stdin with  : 
+        use < We use it to make the program read from a file via stdin instead of waiting for typing from the keyboard.(read) .
+Stderr (Standard Error) : is a default output stream used by programs to send error messages and diagnostics .
+    Understanding File Descriptors : To manage I/O streams like stdin, stdout, and stderr, the system uses file descriptors.
+            file descriptor is a non-negative number that the kernel uses to identify an open file or stream. The default file descriptors are:
+                0: stdin (standard input)
+                1: stdout (standard output)
+                2: stderr (standard error) , he number 2 is the dedicated stderr file descriptor, and we can use it to control /where error messages go/.
 
 
 
