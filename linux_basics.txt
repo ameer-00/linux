@@ -34,7 +34,7 @@ ls (List Directories)  : will list the directories and files in your current dir
     ls -r (reverse) : lest files and directories in reverse alphabetical order . 
     ls -al || ls -lar  :  al >> all and long    &&     lar >> all , long and reverse   .  
 
-touch : create empty file , original function of touch command is ( to update ) the access and modification timestamps of file or directory . 
+touch : create empty file , original function of touch command is ( to update ) the access and modification timestamp s of file or directory . 
     touch -r (reference file) : allow to set a file's timestamp to match that of another file . 
     touch -d (date and time) : can ste a files timestamp to a specific date and time ,   ( "2023-01-01 12:30:00" file name ) .
     
@@ -43,7 +43,7 @@ nano : to writing content within the file .
 
 file : command use to find the file type of a file . 
 
-cat (concatenate) : display the contents of files . 
+cat (concatenate) : display the contents of files , cant show the content of directory .
     cat > : quick way to write text into file directly  Ctrl+D >>> save and exit     but if write new line the first line will deleat . 
     cat >> : add to the file without deleting the previous content . 
     cat -n : this option numbers all lines starting from 1 .
@@ -83,7 +83,7 @@ Using Wildcards or globbing patterns for buld copying :
         []  :  Matches any one of the characters enclosed in the brackets.
 
 mkdir (make Directory) : create a directory .
-    -p (parent) : use it for creare nested directories 
+    -p (parent) : use it for create nested directories 
 
 rm (remove) : deleting files and directories . 
     -f (force)  : To bypass these safety prompts and remove files unconditionally, you can use the force option.
@@ -121,7 +121,8 @@ Stdout (standard Out) : A path in the system through which the program's output 
                 2) stderr : Error message output .
 
     Redirecting stdout with : 
-        The > character is a redirecction operator , It intersepts the data heading to stdout and sends it to a nex destination (Write) . 
+        The > character is a redirection operator , It intersects the data heading to stdout and sends it to a next destination (Write) . 
+
 Stdin (Standard In) : It is the program's default input channel .
     under standing (stdin & stdout) ....
         stdin : Aprogram reads data from stdin .
